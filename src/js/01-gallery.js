@@ -4,11 +4,8 @@ import { galleryItems } from './gallery-items.js';
 console.log(galleryItems);
 
 const gallery = document.querySelector('.gallery');
-const imgList = galleryItems
-
-	.map(({ preview, original, description }) =>
-
-		`<div class="gallery__item">
+const imgList = galleryItems.map(({ preview, original, description }) =>
+	`<div class="gallery__item">
   <a class="gallery__link" href="${original}">
     <img
       class="gallery__image"
@@ -18,7 +15,7 @@ const imgList = galleryItems
     />
   </a>
 </div>`
-	)
+)
 
 	.join("");
 
@@ -35,8 +32,7 @@ function onGalleryImgClick(event) {
 
 	} else {
 
-		const instance = basicLightbox.create(`
-    <img src="${event.target.dataset.source}" width="800" height="600">
-`)
+		const instance = basicLightbox.create(`<img src="${event.target.dataset.source}" width="800" height="600">`)
+		instance.show()
 	}
-}
+} 
